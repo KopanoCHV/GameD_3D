@@ -22,7 +22,13 @@ public class FPController : MonoBehaviour
     public float crouchHeight = 1f;
     public float standHeight = 2f;
     public float crouchSpeed = 2.5f;
-    private float originalMoveSpeed;
+    public float originalMoveSpeed;
+
+
+    [Header("Run Settings")]
+    
+    public float runSpeed = 10f;
+    
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -101,6 +107,20 @@ public class FPController : MonoBehaviour
         else if (context.canceled)
         {
             controller.height = standHeight;
+            moveSpeed = originalMoveSpeed;
+        }
+    }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+
+        if (context.performed)
+        {
+            
+            moveSpeed = runSpeed;
+        }
+        else if (context.canceled)
+        {
             moveSpeed = originalMoveSpeed;
         }
     }
