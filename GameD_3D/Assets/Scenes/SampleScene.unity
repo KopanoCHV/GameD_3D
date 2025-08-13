@@ -164201,6 +164201,8 @@ MonoBehaviour:
   crouchHeight: 1
   standHeight: 2
   crouchSpeed: 2.5
+  originalMoveSpeed: 0
+  runSpeed: 10
 --- !u!114 &1812622877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164310,7 +164312,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1812622876}
         m_TargetAssemblyTypeName: FPController, Assembly-CSharp
-        m_MethodName: OnPickUp
+        m_MethodName: OnRun
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
