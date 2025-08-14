@@ -44,15 +44,7 @@ public class FPController : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void Update()
-    {
-        HandleMovement();
-        HandleLook();
-        if (heldObject != null)
-        {
-            heldObject.MoveToHoldPoint(holdPoint.position);
-        }
-    }
+  
     public void OnMovement(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
@@ -92,6 +84,16 @@ public class FPController : MonoBehaviour
         {
             heldObject.Drop();
             heldObject = null;
+        }
+    }
+
+    private void Update()
+    {
+        HandleMovement();
+        HandleLook();
+        if (heldObject != null)
+        {
+            heldObject.MoveToHoldPoint(holdPoint.position);
         }
     }
 
