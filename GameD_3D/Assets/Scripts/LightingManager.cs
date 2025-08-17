@@ -1,6 +1,6 @@
 using UnityEngine;
 
-
+// Probably Spoonie (2019) Unity DAY AND NIGHT in 6 Minutes!. 5 October. [Online] Available at : https://www.youtube.com/watch?v=m9hj9PdO328 (Accessed: 8 August 2025)
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
 {
