@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Rehope Games (2023) How to Create a PAUSE MENU in Unity ! | 6 June.[Online] Avalable at : https://youtu.be/MNUYe0PWNNs?si=sTtSNGWltrT9UizJ (Accessed: 17 September 2025)
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
