@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class npc : MonoBehaviour
+public class Npc : MonoBehaviour
 {
     public GameObject dialogueSpace;
     public TextMeshProUGUI dialogueText;
