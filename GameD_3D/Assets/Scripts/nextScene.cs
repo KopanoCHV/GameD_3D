@@ -1,16 +1,20 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class nextScene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void LoadSceneByName()
     {
-        
+        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("Game Scene");
+       // SceneManager.LoadScene("");
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadNextInBuild()
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
