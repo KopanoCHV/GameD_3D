@@ -15,7 +15,7 @@ public class Part1Collection : MonoBehaviour
         if (other.transform.tag == "Part1")
         {
             Part1++;
-            Part1text.text = "Part1: " + Part1.ToString();
+            Part1text.text = ": " + Part1.ToString();
             Debug.Log(Part1);
             Destroy(other.gameObject);
         }
