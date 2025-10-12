@@ -7,8 +7,12 @@ using UnityEngine;
 public class Part1Collection : MonoBehaviour
 {
     private int Part1 = 0;
+    private int Part2 = 0;
+    private int Part3 = 0;
 
     public TextMeshProUGUI Part1text;
+    public TextMeshProUGUI Part2text;
+    public TextMeshProUGUI Part3text;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +21,22 @@ public class Part1Collection : MonoBehaviour
             Part1++;
             Part1text.text = ": " + Part1.ToString();
             Debug.Log(Part1);
+            Destroy(other.gameObject);
+        }
+
+        if (other.transform.tag == "Part2")
+        {
+            Part2++;
+            Part2text.text = ": " + Part2.ToString();
+            Debug.Log(Part2);
+            Destroy(other.gameObject);
+        }
+
+        if (other.transform.tag == "Part3")
+        {
+            Part3++;
+            Part3text.text = ": " + Part3.ToString();
+            Debug.Log(Part3);
             Destroy(other.gameObject);
         }
     }
