@@ -42,6 +42,8 @@ public class FPController : MonoBehaviour
     public float RunCost;
     public float ChargeRate;
 
+    public bool isRunning = false;
+
     private Coroutine recharge;
 
     private void Awake()
@@ -105,6 +107,21 @@ public class FPController : MonoBehaviour
             heldObject.MoveToHoldPoint(holdPoint.position);
         }
 
+        if ( isRunning)
+        {
+            Stamina -= RunCost * Time.deltaTime;
+
+            if (Stamina < 0)
+            {
+                Stamina = 0;
+                moveSpeed = originalMoveSpeed;
+            }
+            StaminaBar.fillAmount = Stamina / MaxStamina;
+
+            if (recharge != null) StopCoroutine(recharge);
+            recharge = StartCoroutine(RechargeStamina());
+        }
+
     }
 
     public void OnCrouch(InputAction.CallbackContext context)
@@ -130,19 +147,17 @@ public class FPController : MonoBehaviour
            
             moveSpeed = runSpeed;
 
-           Stamina -= RunCost * Time.deltaTime;
+            isRunning = true;
+
            
-            if(Stamina < 0)
-            {
-                Stamina = 0;
-                moveSpeed = originalMoveSpeed;
-            }
-            StaminaBar.fillAmount = Stamina / MaxStamina;
+            
+            
         }
         else if (context.canceled)
         {
             
             moveSpeed = originalMoveSpeed;
+            isRunning = false;
         }
     }
     public void HandleMovement()
@@ -167,5 +182,21 @@ public class FPController : MonoBehaviour
 
         cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+    }
+
+    private IEnumerator RechargeStamina()
+    {
+        yield return new WaitForSeconds(1f);
+
+        while (Stamina < MaxStamina)
+        {
+            Stamina += ChargeRate /10f;
+
+            if (Stamina > MaxStamina) Stamina = MaxStamina;
+            StaminaBar.fillAmount = Stamina / MaxStamina;
+            yield return new WaitForSeconds(0.1f);
+
+        }
+       
     }
 }
