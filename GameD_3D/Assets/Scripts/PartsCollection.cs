@@ -14,6 +14,8 @@ public class Part1Collection : MonoBehaviour
     public TextMeshProUGUI Part2text;
     public TextMeshProUGUI Part3text;
 
+    public GameObject winUI;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Part1")
@@ -38,6 +40,15 @@ public class Part1Collection : MonoBehaviour
             Part3text.text = ": " + Part3.ToString();
             Debug.Log(Part3);
             Destroy(other.gameObject);
+        }
+    }
+    private void Update()
+    {
+        if (Part1 == 2 && Part2 == 2 && Part3 == 2)
+        {
+            
+            winUI.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
