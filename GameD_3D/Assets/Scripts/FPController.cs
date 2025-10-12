@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class FPController : MonoBehaviour
 {
@@ -34,6 +37,12 @@ public class FPController : MonoBehaviour
     private Vector2 lookInput;
     private Vector3 velocity;
     private float verticalRotation = 0f;
+    public Image StaminaBar;
+    public float Stamina, MaxStamina;
+    public float RunCost;
+    public float ChargeRate;
+
+    private Coroutine recharge;
 
     private void Awake()
     {
@@ -95,6 +104,7 @@ public class FPController : MonoBehaviour
         {
             heldObject.MoveToHoldPoint(holdPoint.position);
         }
+
     }
 
     public void OnCrouch(InputAction.CallbackContext context)
@@ -115,10 +125,19 @@ public class FPController : MonoBehaviour
     public void OnRun(InputAction.CallbackContext context)
     {
 
-        if (context.performed)
+        if (context.performed )
         {
            
             moveSpeed = runSpeed;
+
+           Stamina -= RunCost * Time.deltaTime;
+           
+            if(Stamina < 0)
+            {
+                Stamina = 0;
+                moveSpeed = originalMoveSpeed;
+            }
+            StaminaBar.fillAmount = Stamina / MaxStamina;
         }
         else if (context.canceled)
         {
