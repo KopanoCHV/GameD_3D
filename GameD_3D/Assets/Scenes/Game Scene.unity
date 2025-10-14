@@ -3492,6 +3492,8 @@ GameObject:
   - component: {fileID: 161528661}
   - component: {fileID: 161528660}
   - component: {fileID: 161528659}
+  - component: {fileID: 161528662}
+  - component: {fileID: 161528663}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -3567,6 +3569,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1788893756}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &161528662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161528657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396a1c84d5cb3d842a8a19b28ccca1bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+--- !u!65 &161528663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161528657}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.999999, y: 2.220446e-16, z: 9.999999}
+  m_Center: {x: -0.00000011920929, y: 0, z: 0.00000011920929}
 --- !u!1 &163908794
 GameObject:
   m_ObjectHideFlags: 0
@@ -52289,7 +52325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86010bd3c8f7aee4f884c4ac18d90fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 100
+  healthBar: {fileID: 2031131704}
 --- !u!1001 &1814456270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66351,6 +66388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1306a6c26968c934db07594e93713c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthSlider: {fileID: 2031131705}
 --- !u!114 &2031131705
 MonoBehaviour:
   m_ObjectHideFlags: 0
