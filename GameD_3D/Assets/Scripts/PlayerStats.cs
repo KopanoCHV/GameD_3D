@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -21,7 +22,8 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetSlider(currentHealth);
         if (currentHealth <= 0)
         {
-           print("Player Died");    //For dead
+          // print("Player Died");    //For dead
+          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //For Restarting the scene  
         }
     }
 }

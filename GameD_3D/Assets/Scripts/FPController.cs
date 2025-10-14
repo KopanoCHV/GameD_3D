@@ -41,6 +41,7 @@ public class FPController : MonoBehaviour
     public float Stamina, MaxStamina;
     public float RunCost;
     public float ChargeRate;
+    
 
     public bool isRunning = false;
 
@@ -120,6 +121,11 @@ public class FPController : MonoBehaviour
 
             if (recharge != null) StopCoroutine(recharge);
             recharge = StartCoroutine(RechargeStamina());
+        }
+
+        if(isRunning && Stamina <= 0)
+        {
+            GetComponent<PlayerStats>().TakeDamage(0.1f);  // Damage player when stamina depletes (exp)
         }
 
     }
