@@ -38802,6 +38802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 2031131704}
+  overlay: {fileID: 1915307797}
+  duration: 2
+  fadeSpeed: 1.5
 --- !u!1001 &1814456270
 PrefabInstance:
   m_ObjectHideFlags: 0
