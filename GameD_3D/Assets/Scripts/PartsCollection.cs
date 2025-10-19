@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 
 // Rigor Mortis Tortoise (2023) How to Collect Coins in Unity 3D Tutorial 2023 (Updated). [Online] Avalable at :  https://youtu.be/6iSJ_jh6Rdo?si=f6_5xgETHcy5Dfxa (Accessed: 16 September 2025)
+//Unity Unlocked (2025) Making a 2D Platformer in Unity 6 – Episode 9 (Win Screen). [Online] Available at: https://www.youtube.com/watch?v=0P6c38aisN0 (Accessed: 13 October 2025)
 public class Part1Collection : MonoBehaviour
 {
     private int Part1 = 0;

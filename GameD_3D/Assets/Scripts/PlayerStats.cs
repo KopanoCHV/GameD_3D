@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//Codecodile (2023) How To Create a HealthSystem in Unity: Part 1. [Online] Available at: https://www.youtube.com/watch?v=yQers6__cLc (Accessed: 14 October 2025
+//Natty GameDev (2022) #3 Player Health & Damage Effect: Let's Make a First Person Game in Unity!. [Online] Available at: https://www.youtube.com/watch?v=LugpgsMdLWw (Accessed: 16 October 2025) 
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private float maxHealth;

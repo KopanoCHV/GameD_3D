@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+//Gatsby (2023) Stamina Bar in Unity Tutorial. [Online] Available at: https://www.youtube.com/watch?v=ju1dfCpDoF8 (Accessed:16 October 2025) 
+//Natty GameDev (2022) #3 Player Health & Damage Effect: Let's Make a First Person Game in Unity!. [Online] Available at: https://www.youtube.com/watch?v=LugpgsMdLWw (Accessed: 16 October 2025) 
 public class FPController : MonoBehaviour
 {
     [Header("Movement Settings")]
