@@ -50260,7 +50260,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 4707809398961183540}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d17f3122583f814d97e3d3acabc0198, type: 3}
   m_Name: 
@@ -64043,6 +64043,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 3989601766087247684, guid: 2bda40cf250b7654aafeeb9c1c5d845a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4561226875441370659, guid: 2bda40cf250b7654aafeeb9c1c5d845a, type: 3}
       propertyPath: nextButton
       value: 
@@ -64063,6 +64067,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 178153841}
+    - target: {fileID: 7845063463782191769, guid: 2bda40cf250b7654aafeeb9c1c5d845a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7845063463782191769, guid: 2bda40cf250b7654aafeeb9c1c5d845a, type: 3}
       propertyPath: nextButton
       value: 
@@ -64124,6 +64132,10 @@ PrefabInstance:
       propertyPath: StaminaBar
       value: 
       objectReference: {fileID: 2058950787}
+    - target: {fileID: 3860599786522947310, guid: 96b9aa9c4e9c1ef48b61bafba7086c47, type: 3}
+      propertyPath: lookSensitivity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5049329465273586320, guid: 96b9aa9c4e9c1ef48b61bafba7086c47, type: 3}
       propertyPath: winUI
       value: 
