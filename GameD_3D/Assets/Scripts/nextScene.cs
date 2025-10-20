@@ -7,9 +7,10 @@ public class nextScene : MonoBehaviour
 {
     public void LoadSceneByName()
     {
+       // SceneManager.LoadScene(1);
         SceneManager.LoadScene("Intro");
         SceneManager.LoadScene("Game Scene");
-       // SceneManager.LoadScene("");
+       
 
     }
 
