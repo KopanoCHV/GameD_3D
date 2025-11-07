@@ -10,4 +10,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip background;
     public AudioClip Walk;
     public AudioClip Pickup;
+
+    private void Start()
+    {
+       musicSource.clip = background;
+        musicSource.Play();
+    }
 }
