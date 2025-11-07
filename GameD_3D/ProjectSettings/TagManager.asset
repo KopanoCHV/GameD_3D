@@ -8,6 +8,7 @@ TagManager:
   - Part1
   - Part2
   - Part3
+  - Audio
   layers:
   - Default
   - TransparentFX

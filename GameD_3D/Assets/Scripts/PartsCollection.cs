@@ -17,10 +17,18 @@ public class Part1Collection : MonoBehaviour
 
     public GameObject winUI;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Part1")
         {
+            audioManager.PlaySFX(audioManager.Pickup);
             Part1++;
             Part1text.text = ": " + Part1.ToString();
             Debug.Log(Part1);
@@ -29,6 +37,7 @@ public class Part1Collection : MonoBehaviour
 
         if (other.transform.tag == "Part2")
         {
+            audioManager.PlaySFX(audioManager.Pickup);
             Part2++;
             Part2text.text = ": " + Part2.ToString();
             Debug.Log(Part2);
@@ -37,6 +46,7 @@ public class Part1Collection : MonoBehaviour
 
         if (other.transform.tag == "Part3")
         {
+            audioManager.PlaySFX(audioManager.Pickup);
             Part3++;
             Part3text.text = ": " + Part3.ToString();
             Debug.Log(Part3);
