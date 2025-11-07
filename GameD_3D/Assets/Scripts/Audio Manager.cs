@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Walk;
     public AudioClip Pickup;
     public AudioClip Win;
+    public AudioClip Damage;
 
     private void Start()
     {

@@ -20,6 +20,7 @@ public class PlayerStats : MonoBehaviour
 
     private float durationTimer;
 
+   
     
 
     private void Start()
@@ -47,6 +48,7 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetSlider(currentHealth);
+       
         if (currentHealth <= 0)
         {
           // print("Player Died");    //For dead

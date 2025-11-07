@@ -48,13 +48,14 @@ public class FPController : MonoBehaviour
     public bool isRunning = false;
 
     private Coroutine recharge;
+    int count = 0;
 
     AudioManager audioManager;
        
    
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+       audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         controller = GetComponent<CharacterController>();
         originalMoveSpeed = moveSpeed;
 
@@ -66,7 +67,7 @@ public class FPController : MonoBehaviour
     public void OnMovement(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-        audioManager.PlaySFX(audioManager.Walk);
+       // audioManager.PlaySFX(audioManager.Walk);
     }
 
     public void OnLook(InputAction.CallbackContext context)
@@ -118,6 +119,7 @@ public class FPController : MonoBehaviour
         if ( isRunning)
         {
             Stamina -= RunCost * Time.deltaTime;
+            
 
             if (Stamina < 0)
             {
@@ -133,6 +135,15 @@ public class FPController : MonoBehaviour
         if(isRunning && Stamina <= 0)
         {
             GetComponent<PlayerStats>().TakeDamage(0.1f);  // Damage player when stamina depletes (exp)
+           
+            if(count == 0)
+            {
+                audioManager.PlaySFX(audioManager.Damage);
+                count = 1;
+            }
+               
+            
+            
         }
 
     }
@@ -204,6 +215,7 @@ public class FPController : MonoBehaviour
         while (Stamina < MaxStamina)
         {
             Stamina += ChargeRate /10f;
+            count = 0;
 
             if (Stamina > MaxStamina) Stamina = MaxStamina;
             StaminaBar.fillAmount = Stamina / MaxStamina;

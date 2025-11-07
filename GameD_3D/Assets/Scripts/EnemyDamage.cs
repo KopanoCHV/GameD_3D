@@ -7,6 +7,12 @@ public class EnemyDamage : MonoBehaviour
 {
     public float damage;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +24,7 @@ public class EnemyDamage : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+            audioManager.PlaySFX(audioManager.Damage);
         }
     }
 }

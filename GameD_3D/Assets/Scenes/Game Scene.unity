@@ -31598,7 +31598,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -55370,9 +55370,10 @@ MonoBehaviour:
   musicSource: {fileID: 1006243653}
   SFXSource: {fileID: 1170028318}
   background: {fileID: 8300000, guid: e59bffbbfb9d74748bc0234cb608c458, type: 3}
-  Walk: {fileID: 8300000, guid: 1e77b799765fb194bac61e5082f029c4, type: 3}
+  Walk: {fileID: 8300000, guid: f3bae6fa112f95143be8fb591c7fba13, type: 3}
   Pickup: {fileID: 8300000, guid: 592e1171b0ebb7148b2054b86be46edd, type: 3}
   Win: {fileID: 8300000, guid: 5f6522a77a30bfe438e04abe5053b5d6, type: 3}
+  Damage: {fileID: 8300000, guid: 976c4007941c25c4f90967ae632a902c, type: 3}
 --- !u!1001 &2018995591
 PrefabInstance:
   m_ObjectHideFlags: 0

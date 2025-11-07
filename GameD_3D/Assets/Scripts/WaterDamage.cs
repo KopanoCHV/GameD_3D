@@ -8,7 +8,14 @@ public class WaterDamage : MonoBehaviour
 {
 
     public float damage;
-    
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +28,7 @@ public class WaterDamage : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerStats>().TakeDamage(damage);
-            
+            audioManager.PlaySFX(audioManager.Damage);
         }
     }
 
