@@ -12,6 +12,8 @@ public class LightingManager : MonoBehaviour
     //Variables
     [SerializeField, Range(0, 224)] private float TimeOfDay;
 
+   
+
     private void Update()
     {
         if (Present == null)
@@ -60,6 +62,7 @@ public class LightingManager : MonoBehaviour
                 if (light.type == LightType.Directional)
                 {
                     DirectionalLight = light;
+                    
                     return;
                 }
             }

@@ -33,6 +33,12 @@ public class Part1Collection : MonoBehaviour
             Part1text.text = ": " + Part1.ToString();
             Debug.Log(Part1);
             Destroy(other.gameObject);
+
+        if (Part1 == 2)
+            {
+                audioManager.PlaySFX(audioManager.wolf);
+            }
+
         }
 
         if (other.transform.tag == "Part2")
@@ -42,6 +48,7 @@ public class Part1Collection : MonoBehaviour
             Part2text.text = ": " + Part2.ToString();
             Debug.Log(Part2);
             Destroy(other.gameObject);
+            
         }
 
         if (other.transform.tag == "Part3")

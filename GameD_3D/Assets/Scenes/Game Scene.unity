@@ -27144,7 +27144,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -31596,7 +31596,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -55374,6 +55374,7 @@ MonoBehaviour:
   Pickup: {fileID: 8300000, guid: 592e1171b0ebb7148b2054b86be46edd, type: 3}
   Win: {fileID: 8300000, guid: 5f6522a77a30bfe438e04abe5053b5d6, type: 3}
   Damage: {fileID: 8300000, guid: 976c4007941c25c4f90967ae632a902c, type: 3}
+  wolf: {fileID: 8300000, guid: bdad0f0b79b410c4eb10bba12d5ce307, type: 3}
 --- !u!1001 &2018995591
 PrefabInstance:
   m_ObjectHideFlags: 0
