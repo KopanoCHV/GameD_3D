@@ -80,6 +80,7 @@ public class FPController : MonoBehaviour
         if (context.performed && controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+           audioManager.PlaySFX(audioManager.jump);
         }
 
     }

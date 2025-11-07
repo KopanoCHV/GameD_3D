@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Damage;
     public AudioClip wolf;
     public AudioClip wolf2;
+    public AudioClip jump;
 
     private void Start()
     {

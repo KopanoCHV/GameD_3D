@@ -55376,6 +55376,7 @@ MonoBehaviour:
   Damage: {fileID: 8300000, guid: 976c4007941c25c4f90967ae632a902c, type: 3}
   wolf: {fileID: 8300000, guid: bdad0f0b79b410c4eb10bba12d5ce307, type: 3}
   wolf2: {fileID: 8300000, guid: 8a47d6d9b5768ca44ba0d6cc8edf11fa, type: 3}
+  jump: {fileID: 8300000, guid: 6c496a3543b0606439df9c63c908d4f3, type: 3}
 --- !u!1001 &2018995591
 PrefabInstance:
   m_ObjectHideFlags: 0
