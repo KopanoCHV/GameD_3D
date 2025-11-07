@@ -48,7 +48,10 @@ public class Part1Collection : MonoBehaviour
             Part2text.text = ": " + Part2.ToString();
             Debug.Log(Part2);
             Destroy(other.gameObject);
-            
+            if (Part2 == 1)
+            {
+                audioManager.PlaySFX(audioManager.wolf2);
+            }
         }
 
         if (other.transform.tag == "Part3")

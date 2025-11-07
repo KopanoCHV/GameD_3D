@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Win;
     public AudioClip Damage;
     public AudioClip wolf;
+    public AudioClip wolf2;
 
     private void Start()
     {
