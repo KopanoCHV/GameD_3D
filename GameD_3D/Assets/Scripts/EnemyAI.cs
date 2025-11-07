@@ -12,21 +12,21 @@ public class EnemyAiTutorial : MonoBehaviour
 
     
 
-    //Patroling
+    
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
 
-    //Attacking
+   
     public float timeBetweenAttacks;
     bool alreadyAttacked;
 
 
-    //States
+   
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
-    //Contact attack
+   
     private bool isInContactWithPlayer = false;
 
     private void Awake()
@@ -37,7 +37,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
     private void Update()
     {
-        //Check for sight and attack range
+        
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
@@ -55,13 +55,13 @@ public class EnemyAiTutorial : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        //Walkpoint reached
+        
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
     }
     private void SearchWalkPoint()
     {
-        //Calculate random point in range
+        
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
@@ -78,24 +78,21 @@ public class EnemyAiTutorial : MonoBehaviour
 
     private void AttackPlayer()
     {
-        // Continue moving towards player to make contact
+       
         agent.SetDestination(player.position);
 
         transform.LookAt(player);
 
-        // Check if enemy is close enough to touch the player
+        
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        float contactThreshold = 1.5f; // Adjust this value based on enemy and player size
+        float contactThreshold = 1.5f; 
 
         if (distanceToPlayer <= contactThreshold && !alreadyAttacked)
         {
-            // Enemy has touched the player - perform attack
+            
             if (!alreadyAttacked)
             {
-                ///Attack code here
-
-                ///End of attack code
-
+               
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
