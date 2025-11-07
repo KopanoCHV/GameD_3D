@@ -49,8 +49,12 @@ public class FPController : MonoBehaviour
 
     private Coroutine recharge;
 
+    AudioManager audioManager;
+       
+   
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         controller = GetComponent<CharacterController>();
         originalMoveSpeed = moveSpeed;
 
@@ -62,6 +66,7 @@ public class FPController : MonoBehaviour
     public void OnMovement(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+        audioManager.PlaySFX(audioManager.Walk);
     }
 
     public void OnLook(InputAction.CallbackContext context)

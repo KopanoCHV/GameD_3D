@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip background;
     public AudioClip Walk;
     public AudioClip Pickup;
+    public AudioClip Win;
 
     private void Start()
     {
