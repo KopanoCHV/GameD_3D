@@ -10,7 +10,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-    public float health;
+    
 
     //Patroling
     public Vector3 walkPoint;
