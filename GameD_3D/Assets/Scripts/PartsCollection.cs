@@ -67,9 +67,11 @@ public class Part1Collection : MonoBehaviour
     {
         if (Part1 == 2 && Part2 == 2 && Part3 == 2)
         {
-            audioManager.PlaySFX(audioManager.Win);
+            //audioManager.PlaySFX(audioManager.Win);
             winUI.SetActive(true);
             Time.timeScale = 0;
         }
+
+
     }
 }
