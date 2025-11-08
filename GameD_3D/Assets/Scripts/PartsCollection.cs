@@ -34,7 +34,7 @@ public class Part1Collection : MonoBehaviour
             Debug.Log(Part1);
             Destroy(other.gameObject);
 
-        if (Part1 == 2)
+        if (Part1 == 1)
             {
                 audioManager.PlaySFX(audioManager.wolf);
             }
