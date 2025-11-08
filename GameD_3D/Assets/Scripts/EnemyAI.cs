@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+// Dave / GameDevelopment (2020) FULL 3D ENEMY AI in 6 MINUTES! || Unity Tutorial. [Online] Available at: https://www.youtube.com/watch?v=UjkSFoLxesw (Accessed: 3 November 2025) 
 public class EnemyAiTutorial : MonoBehaviour
 {
     public NavMeshAgent agent;

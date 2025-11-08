@@ -5,6 +5,8 @@ using UnityEngine;
 
 // Rigor Mortis Tortoise (2023) How to Collect Coins in Unity 3D Tutorial 2023 (Updated). [Online] Avalable at :  https://youtu.be/6iSJ_jh6Rdo?si=f6_5xgETHcy5Dfxa (Accessed: 16 September 2025)
 //Unity Unlocked (2025) Making a 2D Platformer in Unity 6 – Episode 9 (Win Screen). [Online] Available at: https://www.youtube.com/watch?v=0P6c38aisN0 (Accessed: 13 October 2025)
+//Dave / GameDevelopment (2020) FULL 3D ENEMY AI in 6 MINUTES! || Unity Tutorial. [Online] Available at: https://www.youtube.com/watch?v=UjkSFoLxesw (Accessed: 3 November 2025) 
+//Rehope Games (2023) How to Add MUSIC and SOUND EFFECTS to Game in Unity | Unity 2D Platformer Tutorial #16. [Online] Available at: https://www.youtube.com/watch?v=N8whM1GjH4w (Accessed: 7 November 2025) 
 public class Part1Collection : MonoBehaviour
 {
     private int Part1 = 0;

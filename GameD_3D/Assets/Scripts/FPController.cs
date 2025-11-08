@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 //Gatsby (2023) Stamina Bar in Unity Tutorial. [Online] Available at: https://www.youtube.com/watch?v=ju1dfCpDoF8 (Accessed:16 October 2025) 
 //Natty GameDev (2022) #3 Player Health & Damage Effect: Let's Make a First Person Game in Unity!. [Online] Available at: https://www.youtube.com/watch?v=LugpgsMdLWw (Accessed: 16 October 2025) 
+//Rehope Games (2023) How to Add MUSIC and SOUND EFFECTS to Game in Unity | Unity 2D Platformer Tutorial #16. [Online] Available at: https://www.youtube.com/watch?v=N8whM1GjH4w (Accessed: 7 November 2025)   
 public class FPController : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -67,7 +68,7 @@ public class FPController : MonoBehaviour
     public void OnMovement(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-       // audioManager.PlaySFX(audioManager.Walk);
+       
     }
 
     public void OnLook(InputAction.CallbackContext context)
