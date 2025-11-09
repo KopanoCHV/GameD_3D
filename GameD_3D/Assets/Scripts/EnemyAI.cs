@@ -85,7 +85,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
         
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        float contactThreshold = 1.5f; 
+       /*float contactThreshold = 1.5f; 
 
         if (distanceToPlayer <= contactThreshold && !alreadyAttacked)
         {
@@ -94,12 +94,12 @@ public class EnemyAiTutorial : MonoBehaviour
             {
                
                 alreadyAttacked = true;
-                Invoke(nameof(ResetAttack), timeBetweenAttacks);
+               // Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
-        }
+        }*/
     }
 
-    private void ResetAttack()
+   /* private void ResetAttack()
     {
         alreadyAttacked = false;
     }
@@ -108,7 +108,7 @@ public class EnemyAiTutorial : MonoBehaviour
     private void DestroyEnemy()
     {
         Destroy(gameObject);
-    }
+    }*/
 
    /* private void OnDrawGizmosSelected()
     {
