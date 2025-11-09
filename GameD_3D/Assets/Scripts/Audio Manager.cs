@@ -7,6 +7,7 @@ using UnityEngine;
 //Pixabay Ouch Oof Hurt Sound Effect. [Online] Available at: https://pixabay.com/sound-effects/ouch-oof-hurt-sound-effect-262616/   (Accessed: 7 November 2025) 
 //Pixabay Item Equip. [Online] Available at: https://pixabay.com/sound-effects/item-equip-6904/ (Accessed: 7 November 2025) 
 //Pixabay Soft Wind. [Online] Available at: https://pixabay.com/sound-effects/soft-wind-318856/ (Accessed: 7 November 2025) 
+//Pixabay Barking 5. [Online] Available at: https://pixabay.com/sound-effects/barking-5-47778/ (Accessed: 9 November 2025) 
 public class AudioManager : MonoBehaviour
 {
     [Header("Audio Sources")]

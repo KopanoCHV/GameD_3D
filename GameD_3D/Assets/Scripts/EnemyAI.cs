@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 // Dave / GameDevelopment (2020) FULL 3D ENEMY AI in 6 MINUTES! || Unity Tutorial. [Online] Available at: https://www.youtube.com/watch?v=UjkSFoLxesw (Accessed: 3 November 2025) 
+//Rehope Games (2023) How to Add MUSIC and SOUND EFFECTS to Game in Unity | Unity 2D Platformer Tutorial #16. [Online] Available at: https://www.youtube.com/watch?v=N8whM1GjH4w (Accessed: 7 November 2025) 
 public class EnemyAiTutorial : MonoBehaviour
 {
     public NavMeshAgent agent;
