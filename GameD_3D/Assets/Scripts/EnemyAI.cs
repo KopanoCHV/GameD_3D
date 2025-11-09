@@ -30,6 +30,7 @@ public class EnemyAiTutorial : MonoBehaviour
     private bool isInContactWithPlayer = false;
 
     AudioManager audioManager;
+    int count = 0;
 
     private void Awake()
     {
@@ -84,10 +85,8 @@ public class EnemyAiTutorial : MonoBehaviour
        
         agent.SetDestination(player.position);
 
-        //transform.LookAt(player);
-
-        
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+               
+       float distanceToPlayer = Vector3.Distance(transform.position, player.position);
        float contactThreshold = 1.5f; 
 
         if (distanceToPlayer <= contactThreshold && !alreadyAttacked)
@@ -100,10 +99,13 @@ public class EnemyAiTutorial : MonoBehaviour
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
 
-            if (distanceToPlayer == 100f) 
-            {
-                audioManager.PlaySFX(audioManager.warning);
-            }
+           
+        }
+
+      if (distanceToPlayer < 100f && count == 0) 
+      {
+         audioManager.PlaySFX(audioManager.warning);
+         count++;
         }
     }
 
@@ -111,6 +113,7 @@ public class EnemyAiTutorial : MonoBehaviour
    private void ResetAttack()
     {
         alreadyAttacked = false;
+        count = 0; 
     }
 
  private void OnDrawGizmosSelected()
