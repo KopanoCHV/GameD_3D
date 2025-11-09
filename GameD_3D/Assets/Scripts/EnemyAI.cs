@@ -97,23 +97,23 @@ public class EnemyAiTutorial : MonoBehaviour
             {
                
                 alreadyAttacked = true;
-                Invoke(nameof(ResetAttack), timeBetweenAttacks);
+                //Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
 
-            if (distanceToPlayer == 100f) 
+            /*if (distanceToPlayer == 100f) 
             {
                 audioManager.PlaySFX(audioManager.warning);
-            }
+            }*/
         }
     }
 
-    private void ResetAttack()
+   
+   /* private void ResetAttack()
     {
         alreadyAttacked = false;
     }
 
-
-   /* private void OnDrawGizmosSelected()
+ private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
