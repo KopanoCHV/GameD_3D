@@ -29,10 +29,13 @@ public class EnemyAiTutorial : MonoBehaviour
    
     private bool isInContactWithPlayer = false;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -95,6 +98,11 @@ public class EnemyAiTutorial : MonoBehaviour
                
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            }
+
+            if (distanceToPlayer == 100f) 
+            {
+                audioManager.PlaySFX(audioManager.warning);
             }
         }
     }
