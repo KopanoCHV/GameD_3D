@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip wolf;
     public AudioClip wolf2;
     public AudioClip jump;
+    public AudioClip warning;  
 
     private void Start()
     {
