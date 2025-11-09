@@ -101,7 +101,7 @@ public class Npc : MonoBehaviour
 
     [Header("Input Settings")]
     public KeyCode nextKey = KeyCode.Space;
-    public KeyCode skipKey = KeyCode.Space;
+   // public KeyCode skipKey = KeyCode.Space;
 
     void Update()
     {
@@ -119,11 +119,11 @@ public class Npc : MonoBehaviour
                 Nextline();
             }
 
-            // Skip typing animation
+           /* // Skip typing animation
             if (Input.GetKeyDown(skipKey) && isTyping)
             {
                 SkipTyping();
-            }
+            }*/
         }
     }
 
