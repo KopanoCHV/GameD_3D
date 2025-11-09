@@ -9,6 +9,7 @@ TagManager:
   - Part2
   - Part3
   - Audio
+  - NPC
   layers:
   - Default
   - TransparentFX
