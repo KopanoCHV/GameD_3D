@@ -81,7 +81,7 @@ public class EnemyAiTutorial : MonoBehaviour
        
         agent.SetDestination(player.position);
 
-        transform.LookAt(player);
+        //transform.LookAt(player);
 
         
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
