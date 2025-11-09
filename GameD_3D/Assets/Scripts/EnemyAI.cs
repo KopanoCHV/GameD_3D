@@ -97,18 +97,18 @@ public class EnemyAiTutorial : MonoBehaviour
             {
                
                 alreadyAttacked = true;
-                //Invoke(nameof(ResetAttack), timeBetweenAttacks);
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
 
-            /*if (distanceToPlayer == 100f) 
+            if (distanceToPlayer == 100f) 
             {
                 audioManager.PlaySFX(audioManager.warning);
-            }*/
+            }
         }
     }
 
    
-   /* private void ResetAttack()
+   private void ResetAttack()
     {
         alreadyAttacked = false;
     }
@@ -119,5 +119,5 @@ public class EnemyAiTutorial : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
-    } */
+    } 
 }
