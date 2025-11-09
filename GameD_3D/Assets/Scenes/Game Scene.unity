@@ -2339,7 +2339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &81483335
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8297,6 +8297,7 @@ Transform:
   m_Children:
   - {fileID: 278073139}
   - {fileID: 1563222914}
+  - {fileID: 1742571049}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261350623
@@ -43596,7 +43597,7 @@ GameObject:
   - component: {fileID: 1563222916}
   - component: {fileID: 1563222915}
   m_Layer: 0
-  m_Name: display
+  m_Name: Start display
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48565,6 +48566,90 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1742571048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742571049}
+  - component: {fileID: 1742571052}
+  - component: {fileID: 1742571051}
+  - component: {fileID: 1742571050}
+  m_Layer: 0
+  m_Name: Enemy display
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1742571049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742571048}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.027346866, y: -0.3618001, z: 0.014713575, w: 0.9317384}
+  m_LocalPosition: {x: 13.92, y: -2.46, z: 14.48}
+  m_LocalScale: {x: 3.811265, y: 0.50137204, z: 9.457292}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 253699674}
+  m_LocalEulerAnglesHint: {x: -2.31, y: -42.498, z: 2.708}
+--- !u!114 &1742571050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742571048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d17f3122583f814d97e3d3acabc0198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Seth, i sense more danger!
+  - There seems to be creatures around.
+  - Becareful they don't touch you.
+  - They seem to be approching us as we move.
+  dialogueSpace: {fileID: 0}
+  dialogueText: {fileID: 0}
+  nextButton: {fileID: 0}
+  dialogueNextAction: {fileID: 5712877470736045904, guid: 851077bf59883374989249bdbf776be0, type: 3}
+--- !u!65 &1742571051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742571048}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1742571052
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742571048}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1742778778
 PrefabInstance:
   m_ObjectHideFlags: 0
