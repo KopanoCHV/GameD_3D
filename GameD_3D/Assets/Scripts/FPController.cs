@@ -1,236 +1,11 @@
-/*using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 
-public class FPController : MonoBehaviour
-{
-    [Header("Movement Settings")]
-    public float moveSpeed = 5f;
-    public float gravity = -9.81f;
-    public float jumpHeight = 1.5f;
-
-    [Header("Look Settings")]
-    public Transform cameraTransform;
-    public float lookSensitivity = 2f;
-    public float verticalLookLimit = 90f;
-
-    [Header("Pickup Settings")]
-    public float pickupRange = 3f;
-    public Transform holdPoint;
-    private PickUpObject heldObject;
-
-    [Header("Crouch Settings")]
-    public float crouchHeight = 1f;
-    public float standHeight = 2f;
-    public float crouchSpeed = 2.5f;
-    public float originalMoveSpeed;
-
-    [Header("Run Settings")]
-    
-    public float runSpeed = 10f;
-    
-
-    private CharacterController controller;
-    private Vector2 moveInput;
-    private Vector2 lookInput;
-    private Vector3 velocity;
-    private float verticalRotation = 0f;
-    public Image StaminaBar;
-    public float Stamina, MaxStamina;
-    public float RunCost;
-    public float ChargeRate;
-    
-
-    public bool isRunning = false;
-
-    private Coroutine recharge;
-    int count = 0;
-
-    AudioManager audioManager;
-       
-   
-    private void Awake()
-    {
-       audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        controller = GetComponent<CharacterController>();
-        originalMoveSpeed = moveSpeed;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-  
-    public void OnMovement(InputAction.CallbackContext context)
-    {
-        moveInput = context.ReadValue<Vector2>();
-       
-    }
-
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        lookInput = context.ReadValue<Vector2>();
-
-    }
-    public void onJump(InputAction.CallbackContext context)
-    {
-        if (context.performed && controller.isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-           audioManager.PlaySFX(audioManager.jump);
-        }
-
-    }
-    public void OnPickUp(InputAction.CallbackContext context)
-    {
-        if (!context.performed) return;
-
-        if (heldObject == null)
-        {
-            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
-            if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
-            {
-                PickUpObject pickUp = hit.collider.GetComponent<PickUpObject>();
-                if (pickUp != null)
-                {
-                    pickUp.PickUp(holdPoint);
-                    heldObject = pickUp;
-                }
-            }
-        }
-        else
-        {
-            heldObject.Drop();
-            heldObject = null;
-        }
-    }
-
-    private void Update()
-    {
-        HandleMovement();
-        HandleLook();
-        if (heldObject != null)
-        {
-            heldObject.MoveToHoldPoint(holdPoint.position);
-        }
-
-        if ( isRunning)
-        {
-            Stamina -= RunCost * Time.deltaTime;
-            
-
-            if (Stamina < 0)
-            {
-                Stamina = 0;
-                moveSpeed = originalMoveSpeed;
-            }
-            StaminaBar.fillAmount = Stamina / MaxStamina;
-
-            if (recharge != null) StopCoroutine(recharge);
-            recharge = StartCoroutine(RechargeStamina());
-        }
-
-        if(isRunning && Stamina <= 0)
-        {
-            GetComponent<PlayerStats>().TakeDamage(0.1f);  // Damage player when stamina depletes (exp)
-           
-            if(count == 0)
-            {
-                audioManager.PlaySFX(audioManager.Damage);
-                count = 1;
-            }
-               
-            
-            
-        }
-
-    }
-
-    public void OnCrouch(InputAction.CallbackContext context)
-    {
-
-        if (context.performed)
-        {
-            controller.height = crouchHeight;
-            moveSpeed = crouchSpeed;
-        }
-        else if (context.canceled)
-        {
-            controller.height = standHeight;
-            moveSpeed = originalMoveSpeed;
-        }
-    }
-
-    public void OnRun(InputAction.CallbackContext context)
-    {
-
-        if (context.performed )
-        {
-           
-            moveSpeed = runSpeed;
-
-            isRunning = true;
-
-           
-            
-            
-        }
-        else if (context.canceled)
-        {
-            
-            moveSpeed = originalMoveSpeed;
-            isRunning = false;
-        }
-    }
-    public void HandleMovement()
-    {
-        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
-        controller.Move(move * moveSpeed * Time.deltaTime);
-
-        if (controller.isGrounded && velocity.y < 0)
-            velocity.y = -2f;
-
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-    }
-
-    public void HandleLook()
-    {
-        float mouseX = lookInput.x * lookSensitivity;
-        float mouseY = lookInput.y * lookSensitivity;
-
-        verticalRotation -= mouseY;
-        verticalRotation = Mathf.Clamp(verticalRotation, -verticalLookLimit, verticalLookLimit);
-
-        cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
-    }
-
-    private IEnumerator RechargeStamina()
-    {
-        yield return new WaitForSeconds(1f);
-
-        while (Stamina < MaxStamina)
-        {
-            Stamina += ChargeRate /10f;
-            count = 0;
-
-            if (Stamina > MaxStamina) Stamina = MaxStamina;
-            StaminaBar.fillAmount = Stamina / MaxStamina;
-            yield return new WaitForSeconds(0.1f);
-
-        }
-       
-    }
-}
-*/
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FPController : MonoBehaviour
 {
@@ -270,11 +45,15 @@ public class FPController : MonoBehaviour
     public GameObject nextButton;
     public float wordSpeed = 0.05f;
 
+    [Header("Pause Menu")]
+    public GameObject pauseMenu;
+
     private string[] currentDialogue;
     private int dialogueIndex;
     private bool isTyping = false;
     private bool playerIsCloseToNPC = false;
     private Npc currentNPC;
+    private bool isPaused = false;
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -290,6 +69,7 @@ public class FPController : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction dialogueNextAction;
     private InputAction dialogueSkipAction;
+    private InputAction pauseAction;
 
     AudioManager audioManager;
 
@@ -303,14 +83,15 @@ public class FPController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        // Get dialogue input actions
+        // Get input actions
         dialogueNextAction = playerInput.actions["DialogueNext"];
         dialogueSkipAction = playerInput.actions["DialogueSkip"];
+        pauseAction = playerInput.actions["Pause"];
     }
 
     private void OnEnable()
     {
-        // Enable dialogue input actions
+        // Enable input actions
         if (dialogueNextAction != null)
         {
             dialogueNextAction.performed += OnDialogueNext;
@@ -322,11 +103,17 @@ public class FPController : MonoBehaviour
             dialogueSkipAction.performed += OnDialogueSkip;
             dialogueSkipAction.Enable();
         }
+
+        if (pauseAction != null)
+        {
+            pauseAction.performed += OnPause;
+            pauseAction.Enable();
+        }
     }
 
     private void OnDisable()
     {
-        // Disable dialogue input actions
+        // Disable input actions
         if (dialogueNextAction != null)
         {
             dialogueNextAction.performed -= OnDialogueNext;
@@ -338,24 +125,23 @@ public class FPController : MonoBehaviour
             dialogueSkipAction.performed -= OnDialogueSkip;
             dialogueSkipAction.Disable();
         }
+
+        if (pauseAction != null)
+        {
+            pauseAction.performed -= OnPause;
+            pauseAction.Disable();
+        }
     }
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        // Only allow movement if not in dialogue
-        if (!dialogueSpace.activeInHierarchy)
-        {
-            moveInput = context.ReadValue<Vector2>();
-        }
-        else
-        {
-            moveInput = Vector2.zero; // Stop movement during dialogue
-        }
+        // Always allow movement, even during dialogue
+        moveInput = context.ReadValue<Vector2>();
     }
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        // Only process look input if not in dialogue
+        // Only process look input if not in dialogue (to prevent camera movement during dialogue)
         if (!dialogueSpace.activeInHierarchy)
         {
             lookInput = context.ReadValue<Vector2>();
@@ -368,7 +154,7 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && controller.isGrounded && !dialogueSpace.activeInHierarchy)
+        if (context.performed && controller.isGrounded && !isPaused)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             audioManager.PlaySFX(audioManager.jump);
@@ -377,7 +163,7 @@ public class FPController : MonoBehaviour
 
     public void OnPickUp(InputAction.CallbackContext context)
     {
-        if (!context.performed || dialogueSpace.activeInHierarchy) return;
+        if (!context.performed || isPaused) return;
 
         if (heldObject == null)
         {
@@ -401,7 +187,7 @@ public class FPController : MonoBehaviour
 
     public void OnCrouch(InputAction.CallbackContext context)
     {
-        if (dialogueSpace.activeInHierarchy) return;
+        if (isPaused) return;
 
         if (context.performed)
         {
@@ -417,7 +203,7 @@ public class FPController : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        if (dialogueSpace.activeInHierarchy) return;
+        if (isPaused) return;
 
         if (context.performed)
         {
@@ -431,10 +217,25 @@ public class FPController : MonoBehaviour
         }
     }
 
+    // Pause input handler
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        if (isPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+        }
+    }
+
     // Dialogue input handlers
     public void OnDialogueNext(InputAction.CallbackContext context)
     {
-        if (!context.performed || !dialogueSpace.activeInHierarchy) return;
+        if (!context.performed || !dialogueSpace.activeInHierarchy || isPaused) return;
 
         if (!isTyping)
         {
@@ -444,7 +245,7 @@ public class FPController : MonoBehaviour
 
     public void OnDialogueSkip(InputAction.CallbackContext context)
     {
-        if (!context.performed || !dialogueSpace.activeInHierarchy) return;
+        if (!context.performed || !dialogueSpace.activeInHierarchy || isPaused) return;
 
         if (isTyping)
         {
@@ -454,56 +255,60 @@ public class FPController : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement();
-
-        // Only handle look if not in dialogue
-        if (!dialogueSpace.activeInHierarchy)
+        // Only process gameplay updates if not paused
+        if (!isPaused)
         {
-            HandleLook();
-        }
+            HandleMovement();
 
-        if (heldObject != null)
-        {
-            heldObject.MoveToHoldPoint(holdPoint.position);
-        }
-
-        // Update next button visibility
-        if (dialogueSpace.activeInHierarchy && dialogueText.text == currentDialogue[dialogueIndex])
-        {
-            nextButton.SetActive(true);
-        }
-
-        if (isRunning)
-        {
-            Stamina -= RunCost * Time.deltaTime;
-
-            if (Stamina < 0)
+            // Only handle look if not in dialogue
+            if (!dialogueSpace.activeInHierarchy)
             {
-                Stamina = 0;
-                moveSpeed = originalMoveSpeed;
+                HandleLook();
             }
-            StaminaBar.fillAmount = Stamina / MaxStamina;
 
-            if (recharge != null) StopCoroutine(recharge);
-            recharge = StartCoroutine(RechargeStamina());
-        }
-
-        if (isRunning && Stamina <= 0)
-        {
-            GetComponent<PlayerStats>().TakeDamage(0.1f);
-
-            if (count == 0)
+            if (heldObject != null)
             {
-                audioManager.PlaySFX(audioManager.Damage);
-                count = 1;
+                heldObject.MoveToHoldPoint(holdPoint.position);
+            }
+
+            // Update next button visibility
+            if (dialogueSpace.activeInHierarchy && dialogueText.text == currentDialogue[dialogueIndex])
+            {
+                nextButton.SetActive(true);
+            }
+
+            if (isRunning)
+            {
+                Stamina -= RunCost * Time.deltaTime;
+
+                if (Stamina < 0)
+                {
+                    Stamina = 0;
+                    moveSpeed = originalMoveSpeed;
+                }
+                StaminaBar.fillAmount = Stamina / MaxStamina;
+
+                if (recharge != null) StopCoroutine(recharge);
+                recharge = StartCoroutine(RechargeStamina());
+            }
+
+            if (isRunning && Stamina <= 0)
+            {
+                GetComponent<PlayerStats>().TakeDamage(0.1f);
+
+                if (count == 0)
+                {
+                    audioManager.PlaySFX(audioManager.Damage);
+                    count = 1;
+                }
             }
         }
     }
 
     public void HandleMovement()
     {
-        // Reduce movement speed during dialogue or stop completely
-        float currentMoveSpeed = dialogueSpace.activeInHierarchy ? moveSpeed * 0.1f : moveSpeed;
+        // Slightly reduce movement speed during dialogue for better readability
+        float currentMoveSpeed = dialogueSpace.activeInHierarchy ? moveSpeed * 0.7f : moveSpeed;
 
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
         controller.Move(move * currentMoveSpeed * Time.deltaTime);
@@ -542,10 +347,59 @@ public class FPController : MonoBehaviour
         }
     }
 
+    // Pause Menu Methods
+    public void Pause()
+    {
+        if (dialogueSpace.activeInHierarchy) return; // Can't pause during dialogue
+
+        isPaused = true;
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+
+        // Switch cursor mode
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // Switch to UI action map
+        if (playerInput != null)
+        {
+            playerInput.SwitchCurrentActionMap("UI");
+        }
+    }
+
+    public void Resume()
+    {
+        isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+
+        // Switch back to gameplay cursor mode
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        // Switch back to Player action map
+        if (playerInput != null)
+        {
+            playerInput.SwitchCurrentActionMap("Player");
+        }
+    }
+
+    public void Home()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     // Dialogue Methods
     public void StartDialogue(string[] dialogue, Npc npc)
     {
-        if (dialogueSpace.activeInHierarchy) return;
+        if (dialogueSpace.activeInHierarchy || isPaused) return;
 
         currentDialogue = dialogue;
         currentNPC = npc;
@@ -554,15 +408,12 @@ public class FPController : MonoBehaviour
         nextButton.SetActive(false);
         StartCoroutine(Typing());
 
-        // Switch cursor mode
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        // Keep cursor locked during dialogue since player can still move
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
-        // Switch to UI action map for better input handling
-        if (playerInput != null)
-        {
-            playerInput.SwitchCurrentActionMap("UI");
-        }
+        // Stay in Player action map to allow movement during dialogue
+        // No need to switch action maps since we want to maintain movement control
     }
 
     public void NextLine()
@@ -586,15 +437,9 @@ public class FPController : MonoBehaviour
         dialogueIndex = 0;
         dialogueSpace.SetActive(false);
 
-        // Switch back to gameplay mode
+        // Ensure cursor remains locked
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        // Switch back to Player action map
-        if (playerInput != null)
-        {
-            playerInput.SwitchCurrentActionMap("Player");
-        }
 
         if (currentNPC != null)
         {
@@ -629,7 +474,7 @@ public class FPController : MonoBehaviour
         {
             playerIsCloseToNPC = true;
             Npc npc = other.GetComponent<Npc>();
-            if (npc != null && !dialogueSpace.activeInHierarchy)
+            if (npc != null && !dialogueSpace.activeInHierarchy && !isPaused)
             {
                 StartDialogue(npc.dialogue, npc);
             }
@@ -641,15 +486,13 @@ public class FPController : MonoBehaviour
         if (other.CompareTag("NPC"))
         {
             playerIsCloseToNPC = false;
-            if (currentNPC != null && currentNPC.gameObject == other.gameObject)
-            {
-                ZeroText();
-            }
+            // Don't automatically end dialogue when player moves away
+            // Let the player finish reading the dialogue at their own pace
         }
     }
 
     public bool CanStartDialogue()
     {
-        return playerIsCloseToNPC && !dialogueSpace.activeInHierarchy;
+        return playerIsCloseToNPC && !dialogueSpace.activeInHierarchy && !isPaused;
     }
 }
