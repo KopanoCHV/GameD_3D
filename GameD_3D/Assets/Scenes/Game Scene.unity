@@ -9416,8 +9416,8 @@ Transform:
   m_GameObject: {fileID: 278073138}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08726121, y: -0, z: -0, w: 0.9961855}
-  m_LocalPosition: {x: -27.3697, y: -3.34, z: -34.15}
-  m_LocalScale: {x: 43.584103, y: 1, z: 8.0894985}
+  m_LocalPosition: {x: -22.2191, y: -3.5485, z: -35.331}
+  m_LocalScale: {x: 58.34331, y: 1, z: 11.610971}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 253699674}
@@ -9436,9 +9436,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Seth! Don't go any furthur!
-  - The liquid is water, a fusion of hydron and oxygen.
-  - Your body is damaged by this fusion.
-  - So at all cost, try avoiding it.
+  - The liquid is  a fusion of hydron and oxygen.
+  - It will burn you when you touch it, AVOID IT AT ALL COST!!
   - Ok! Head for the parts so i can repair the ship!
   dialogueSpace: {fileID: 352183083}
   dialogueText: {fileID: 1516715818}
@@ -43459,7 +43458,7 @@ Transform:
   m_GameObject: {fileID: 1563222913}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.9, y: -2.52, z: -39.9}
+  m_LocalPosition: {x: 23.81, y: -2.52, z: -24.19}
   m_LocalScale: {x: 8.839041, y: 1, z: 8.0894985}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43478,10 +43477,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Location: Planet Earth.'
-  - Day 1.
-  - Hero, we have crashed on the Planet Earth.
-  - Head to the spaceship to get instructions to guide your way out.
+  - 'Location: Planet Earth.    ( PRESS Q TO CONTINUE )      '
+  - Seth, we have crashed on the Planet Earth.
+  - We should go to the spaceship and assess the damages
   dialogueSpace: {fileID: 657214861}
   dialogueText: {fileID: 2094404557}
   nextButton: {fileID: 0}
@@ -43506,8 +43504,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.28744888, y: 0.8838794, z: 0.12780617}
-  m_Center: {x: -0.0077925483, y: 0.05806029, z: 0.30406684}
+  m_Size: {x: 0.28744888, y: 0.8838794, z: 0.09246387}
+  m_Center: {x: -0.0077925483, y: 0.05806029, z: 0.32173806}
 --- !u!23 &1563222917
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45953,8 +45951,8 @@ Transform:
   m_GameObject: {fileID: 1650717435}
   serializedVersion: 2
   m_LocalRotation: {x: 0.01261148, y: -0.010718065, z: 0.110899456, w: 0.9936938}
-  m_LocalPosition: {x: 0.156965, y: -0.19796, z: -0.015794}
-  m_LocalScale: {x: 0.8745157, y: 0.22212653, z: 0.23697267}
+  m_LocalPosition: {x: 0.206257, y: -0.15585, z: -0.01454}
+  m_LocalScale: {x: 0.9750605, y: 0.22212653, z: 0.23697267}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1857802487}
@@ -45972,12 +45970,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Hero. We need parts to repair the ship.
-  - They have desperesd across the island.
-  - The island has eroded paths to help you navigate.
-  - Follow them , find all parts and return them to me.
-  - But before you do that, i sense a hardous liquid.
-  - Please head left towards this liquid so i can examine it.
+  - The Ship is missing parts
+  - They probably dispersed across this island.
+  - Find all parts so that i can fix the spaceship.
+  - But before that, WHAT IS THAT BLUE LIQUID?!
   dialogueSpace: {fileID: 1132504889}
   dialogueText: {fileID: 1970695861}
   nextButton: {fileID: 0}
@@ -48706,8 +48702,7 @@ MonoBehaviour:
   dialogue:
   - Seth, i sense more danger!
   - There seems to be creatures around.
-  - Becareful they don't touch you.
-  - They seem to be approching us as we move.
+  - They seem to be approching us as we speak
   dialogueSpace: {fileID: 0}
   dialogueText: {fileID: 0}
   nextButton: {fileID: 0}
@@ -67466,7 +67461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455611449987370500, guid: 96b9aa9c4e9c1ef48b61bafba7086c47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 260.7
+      value: 265.5
       objectReference: {fileID: 0}
     - target: {fileID: 7455611449987370500, guid: 96b9aa9c4e9c1ef48b61bafba7086c47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -67474,7 +67469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455611449987370500, guid: 96b9aa9c4e9c1ef48b61bafba7086c47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 110.4
+      value: 126.4
       objectReference: {fileID: 0}
     - target: {fileID: 7455611449987370500, guid: 96b9aa9c4e9c1ef48b61bafba7086c47, type: 3}
       propertyPath: m_LocalRotation.w
