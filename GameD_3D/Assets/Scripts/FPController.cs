@@ -305,7 +305,7 @@ public class FPController : MonoBehaviour
 
         // Get dialogue input actions
         dialogueNextAction = playerInput.actions["DialogueNext"];
-        //dialogueSkipAction = playerInput.actions["DialogueSkip"];
+        dialogueSkipAction = playerInput.actions["DialogueSkip"];
     }
 
     private void OnEnable()
@@ -317,11 +317,11 @@ public class FPController : MonoBehaviour
             dialogueNextAction.Enable();
         }
 
-      /*  if (dialogueSkipAction != null)
+        if (dialogueSkipAction != null)
         {
             dialogueSkipAction.performed += OnDialogueSkip;
             dialogueSkipAction.Enable();
-        }*/
+        }
     }
 
     private void OnDisable()
@@ -333,11 +333,11 @@ public class FPController : MonoBehaviour
             dialogueNextAction.Disable();
         }
 
-       /* if (dialogueSkipAction != null)
+        if (dialogueSkipAction != null)
         {
             dialogueSkipAction.performed -= OnDialogueSkip;
             dialogueSkipAction.Disable();
-        }*/
+        }
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -442,7 +442,7 @@ public class FPController : MonoBehaviour
         }
     }
 
-   /* public void OnDialogueSkip(InputAction.CallbackContext context)
+    public void OnDialogueSkip(InputAction.CallbackContext context)
     {
         if (!context.performed || !dialogueSpace.activeInHierarchy) return;
 
@@ -450,7 +450,7 @@ public class FPController : MonoBehaviour
         {
             SkipTyping();
         }
-    }*/
+    }
 
     private void Update()
     {

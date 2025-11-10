@@ -103,6 +103,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DialogueSkip",
+                    "type": "Button",
+                    "id": "a0f2cb42-22da-425d-aa91-b5496397564c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -523,6 +532,28 @@
                     "action": "DialogueNext",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "944a94fe-f4ad-4a0e-b9b4-432b276c7fc3",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "DialogueSkip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf169590-6387-42eb-bffc-ad8d044159a4",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "DialogueSkip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -624,6 +655,15 @@
                     "name": "DialogueNext",
                     "type": "Button",
                     "id": "e92e7e9d-9d7c-4184-83f5-ebc62c59a5e4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DialogueSkip",
+                    "type": "Button",
+                    "id": "0a4101b6-bfb6-42d4-bf37-bb702cfeb239",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -1068,6 +1108,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "DialogueNext",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7161ae9-673a-4ee4-8623-4b3780749196",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "DialogueSkip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f54cdb3-5266-4fad-a95f-cbdb84ea0690",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "DialogueSkip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

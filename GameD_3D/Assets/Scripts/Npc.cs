@@ -124,7 +124,7 @@ public class Npc : MonoBehaviour
 
     [Header("Input Settings")]
     public InputActionReference dialogueNextAction;
-   // public InputActionReference dialogueSkipAction;
+    public InputActionReference dialogueSkipAction;
 
     private void OnEnable()
     {
@@ -133,10 +133,10 @@ public class Npc : MonoBehaviour
         {
             dialogueNextAction.action.Enable();
         }
-        /*if (dialogueSkipAction != null)
+        if (dialogueSkipAction != null)
         {
             dialogueSkipAction.action.Enable();
-        }*/
+        }
     }
 
     private void OnDisable()
@@ -146,10 +146,10 @@ public class Npc : MonoBehaviour
         {
             dialogueNextAction.action.Disable();
         }
-       /* if (dialogueSkipAction != null)
+       if (dialogueSkipAction != null)
         {
             dialogueSkipAction.action.Disable();
-        }*/
+        }
     }
 
     private void OnTriggerEnter(Collider other)
