@@ -9433,7 +9433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Seth! Don't go any furthur!
+  - SETH! STOOOOP!!!
   - The liquid is  a fusion of hydron and oxygen.
   - It will burn you when you touch it, AVOID IT AT ALL COST!!
   - Ok! Head for the parts so i can repair the ship!
@@ -48333,7 +48333,7 @@ MonoBehaviour:
   dialogue:
   - Seth, i sense more danger!
   - There seems to be creatures around.
-  - They seem to be approching us as we speak
+  - One is approching as we speak
   dialogueSpace: {fileID: 0}
   dialogueText: {fileID: 0}
   nextButton: {fileID: 0}
@@ -66687,6 +66687,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 483817806}
+    - target: {fileID: 3860599786522947310, guid: 96b9aa9c4e9c1ef48b61bafba7086c47, type: 3}
+      propertyPath: wordSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 3860599786522947310, guid: 96b9aa9c4e9c1ef48b61bafba7086c47, type: 3}
       propertyPath: StaminaBar
       value: 
