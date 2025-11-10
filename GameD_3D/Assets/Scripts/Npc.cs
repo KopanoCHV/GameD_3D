@@ -160,6 +160,7 @@ public class Npc : MonoBehaviour
             if (player != null && player.CanStartDialogue())
             {
                 player.StartDialogue(dialogue, this);
+                
             }
         }
     }
@@ -171,15 +172,14 @@ public class Npc : MonoBehaviour
             FPController player = other.GetComponent<FPController>();
             if (player != null)
             {
-                // Optional: Add any behavior when player exits NPC trigger
+               
             }
         }
     }
 
     public void OnDialogueEnd()
     {
-        // Optional: Add any NPC-specific behavior when dialogue ends
-        // For example: trigger events, animations, quest updates, etc.
+       
         Debug.Log("Dialogue ended with " + gameObject.name);
     }
 }
