@@ -43807,7 +43807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - 'AI: Seth, we have crashed on the Planet Earth.'
+  - 'AI: Seth, we have crashed on the Planet Earth. (Press Q to Continue reading))'
   - 'AI: We should go to the spaceship and assess the damages'
   dialogueSpace: {fileID: 657214861}
   dialogueText: {fileID: 2094404557}
