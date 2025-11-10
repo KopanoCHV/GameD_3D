@@ -9433,7 +9433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - SETH! STOOOOP!!!
+  - SETH! STOOOOP!!!  (Press Q to continue)
   - The liquid is  a fusion of hydron and oxygen.
   - It will burn you when you touch it, AVOID IT AT ALL COST!!
   - Ok! Head for the parts so i can repair the ship!
@@ -43350,7 +43350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Location: Planet Earth.    ( PRESS Q TO CONTINUE )      '
+  - 'Location: Planet Earth. (Press Q to continue )      '
   - Seth, we have crashed on the Planet Earth.
   - We should go to the spaceship and assess the damages
   dialogueSpace: {fileID: 657214861}
@@ -45722,7 +45722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - The Ship is missing parts
+  - The Ship is missing parts  (Press Q to continue)
   - They probably dispersed across this island.
   - Find all parts so that i can fix the spaceship.
   - But before that, WHAT IS THAT BLUE LIQUID?!
@@ -48311,13 +48311,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742571048}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.027346866, y: -0.3618001, z: 0.014713575, w: 0.9317384}
-  m_LocalPosition: {x: 13.92, y: -2.46, z: 14.48}
+  m_LocalRotation: {x: -0.021610182, y: -0.6268616, z: 0.02230114, w: 0.77851164}
+  m_LocalPosition: {x: 10.24, y: -3, z: 6.47}
   m_LocalScale: {x: 3.811265, y: 0.50137204, z: 9.457292}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 253699674}
-  m_LocalEulerAnglesHint: {x: -2.31, y: -42.498, z: 2.708}
+  m_LocalEulerAnglesHint: {x: -0.326, y: -77.692, z: 3.544}
 --- !u!114 &1742571050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48331,9 +48331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Seth, i sense more danger!
+  - Seth, i sense more danger!   (Press Q to continue))
   - There seems to be creatures around.
-  - One is approching as we speak
+  - One is approching as we speak, BE CAREFUL!
   dialogueSpace: {fileID: 0}
   dialogueText: {fileID: 0}
   nextButton: {fileID: 0}
@@ -48358,8 +48358,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 4.229962}
+  m_Center: {x: 0.0000006421386, y: -0.000000004493926, z: 0.37833083}
 --- !u!33 &1742571052
 MeshFilter:
   m_ObjectHideFlags: 0
