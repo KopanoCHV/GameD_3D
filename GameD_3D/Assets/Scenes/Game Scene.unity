@@ -45974,6 +45974,7 @@ MonoBehaviour:
   - They probably dispersed across this island.
   - Find all parts so that i can fix the spaceship.
   - But before that, WHAT IS THAT BLUE LIQUID?!
+  - Should check it out
   dialogueSpace: {fileID: 1132504889}
   dialogueText: {fileID: 1970695861}
   nextButton: {fileID: 0}
